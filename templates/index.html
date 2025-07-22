@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Книги {{ author }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Книги автора: {{ author }}</h1>
+    <ul>
+        {% for book in books %}
+        <li>
+            <h2>{{ book.title }}</h2>
+            <p>Сторінок: {{ book.pages }}</p>
+            {% if book.image %}
+            <img src="{{ book.image }}" width="100">
+            {% endif %}
+            {% if book.author_image %}
+            <img src="{{ book.author_image }}" width="80">
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

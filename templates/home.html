@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Головна</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Вітаємо {{ user.login }}!</h1>
+    <p><a href="/logout">Вийти</a></p>
+
+    <h2>Автори</h2>
+    <ul>
+        {% for author in authors %}
+        <li><a href="/html/{{ author }}">{{ author }}</a></li>
+        {% else %}
+        <li>Авторів немає</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/docs">API</a></p>
+</body>
+</html>
